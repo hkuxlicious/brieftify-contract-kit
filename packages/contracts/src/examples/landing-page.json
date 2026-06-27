@@ -1,0 +1,38 @@
+{
+  "version": "build-contract/v1",
+  "goal": "Create a focused waitlist landing page for an AI meeting-notes SaaS.",
+  "doneWhen": [
+    "Hero states the meeting-notes value clearly.",
+    "Waitlist email capture has loading, success, and validation/error states.",
+    "Page includes concise proof placeholders without fake testimonials."
+  ],
+  "preserve": [
+    "AI meeting notes",
+    "waitlist",
+    "simple first landing page"
+  ],
+  "doNotBuild": [
+    "Do not add payments or team workspaces.",
+    "Do not invent customer logos or real testimonials."
+  ],
+  "allowedAssumptions": [
+    "Use a clean B2B visual style.",
+    "Keep the first version to one page."
+  ],
+  "continueIf": [
+    "The waitlist path is working and copy is still rough."
+  ],
+  "stopWhen": [
+    "The builder starts adding account dashboards or billing."
+  ],
+  "askHumanIf": [
+    "A real product name, logo, or pricing claim is needed."
+  ],
+  "watchForDrift": [
+    "Generic productivity app copy",
+    "Fake social proof",
+    "Overbuilt dashboard scope"
+  ],
+  "smallestRepair": "Fix only the missing waitlist, proof-placeholder, or scope issue. Do not redesign the page."
+}
+

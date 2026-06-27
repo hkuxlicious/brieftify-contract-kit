@@ -1,0 +1,43 @@
+{
+  "version": "build-contract/v1",
+  "goal": "Create an internal workflow where managers approve expense claims with receipts, reasons, export, roles, and audit log.",
+  "doneWhen": [
+    "Employee submission includes receipt and reason.",
+    "Manager queue supports approve/reject with reason.",
+    "Finance export and audit log are represented.",
+    "Role-specific states are covered."
+  ],
+  "preserve": [
+    "expense claims",
+    "receipt",
+    "approve/reject with reason",
+    "monthly finance export",
+    "roles",
+    "audit log"
+  ],
+  "doNotBuild": [
+    "Do not add fake productivity metrics.",
+    "Do not add payments or payroll automation."
+  ],
+  "allowedAssumptions": [
+    "Use placeholder rows instead of real employee data.",
+    "Keep permissions simple for first build."
+  ],
+  "continueIf": [
+    "Core workflow is present but visual polish is incomplete."
+  ],
+  "stopWhen": [
+    "The builder removes role-specific behavior or audit logging."
+  ],
+  "askHumanIf": [
+    "Approval thresholds or finance export format need policy decisions."
+  ],
+  "watchForDrift": [
+    "Generic dashboard",
+    "Fake business metrics",
+    "No reject reason",
+    "No audit trail"
+  ],
+  "smallestRepair": "Repair the missing workflow slice only: submission, queue, decision, export, role state, or audit log."
+}
+

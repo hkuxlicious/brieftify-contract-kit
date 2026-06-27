@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "noEmit": true,
+    "paths": {
+      "@brieftify/contracts": [
+        "packages/contracts/src/index.ts"
+      ],
+      "@brieftify/mock-engine": [
+        "packages/mock-engine/src/index.ts"
+      ]
+    },
+    "strict": true,
+    "target": "ES2022"
+  },
+  "include": [
+    "packages/**/*.ts",
+    "examples/**/*.ts"
+  ]
+}

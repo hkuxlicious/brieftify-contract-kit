@@ -1,0 +1,20 @@
+{
+  "name": "brieftify-contract-kit",
+  "version": "0.0.0-private",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ],
+  "scripts": {
+    "verify": "npm run build && npm run check:public",
+    "check:public": "node scripts/check-public-boundaries.mjs",
+    "test": "node scripts/check-public-boundaries.mjs",
+    "build": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}

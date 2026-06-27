@@ -1,0 +1,39 @@
+{
+  "version": "build-contract/v1",
+  "goal": "Create a Figma plugin panel that renames selected messy layers using team naming rules.",
+  "doneWhen": [
+    "Plugin panel explains the selected-layer rename action.",
+    "Preview/apply/undo states are represented.",
+    "Empty selection and invalid layer-name states are covered."
+  ],
+  "preserve": [
+    "Figma plugin",
+    "selected layers",
+    "team naming rules",
+    "preview/apply/undo"
+  ],
+  "doNotBuild": [
+    "Do not turn this into a normal website.",
+    "Do not add unrelated design-system management."
+  ],
+  "allowedAssumptions": [
+    "Use a compact plugin-panel layout.",
+    "Default to manual review before applying changes."
+  ],
+  "continueIf": [
+    "The panel is rough but the selected-layer flow is present."
+  ],
+  "stopWhen": [
+    "The builder swaps Figma context for a generic web app."
+  ],
+  "askHumanIf": [
+    "The exact naming convention needs team approval."
+  ],
+  "watchForDrift": [
+    "Generic SaaS dashboard",
+    "No selected-layer state",
+    "No undo path"
+  ],
+  "smallestRepair": "Restore the Figma plugin panel and selected-layer rename flow before adding anything else."
+}
+

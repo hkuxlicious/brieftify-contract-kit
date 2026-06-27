@@ -1,0 +1,41 @@
+{
+  "version": "build-contract/v1",
+  "goal": "Create a backend-only fraud scoring API for fintech transactions.",
+  "doneWhen": [
+    "Request and response shape are documented.",
+    "Risk score and reason codes are returned.",
+    "Threshold and audit-log behavior are specified.",
+    "Error and access-assumption states are covered."
+  ],
+  "preserve": [
+    "backend-only API",
+    "fraud scoring",
+    "fintech transactions",
+    "risk reasons",
+    "audit logging"
+  ],
+  "doNotBuild": [
+    "Do not create a game or app dashboard.",
+    "Do not add checkout, billing, Stripe, or subscriptions."
+  ],
+  "allowedAssumptions": [
+    "Use JSON request/response examples.",
+    "Assume an internal service caller for the first version."
+  ],
+  "continueIf": [
+    "The API contract is clear but implementation details are pending."
+  ],
+  "stopWhen": [
+    "The builder turns score/risk wording into game scoring."
+  ],
+  "askHumanIf": [
+    "Compliance, model thresholds, or production data retention rules are required."
+  ],
+  "watchForDrift": [
+    "Game mechanics",
+    "Payment checkout",
+    "Generic analytics dashboard"
+  ],
+  "smallestRepair": "Restore the API contract, risk-score response, and audit behavior without adding UI scope."
+}
+

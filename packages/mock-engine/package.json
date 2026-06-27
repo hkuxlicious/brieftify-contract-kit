@@ -1,0 +1,13 @@
+{
+  "name": "@brieftify/mock-engine",
+  "version": "0.0.0-private",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@brieftify/contracts": "0.0.0-private"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  }
+}
