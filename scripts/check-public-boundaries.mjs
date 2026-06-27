@@ -11,8 +11,12 @@ const guardFiles = new Set([
 ]);
 
 const boundaryReferenceFiles = new Set([
+  "AGENTS.md",
   "README.md",
   "CONTRIBUTING.md",
+  "NEXT_ACTIONS.md",
+  "PROJECT_HANDOFF.md",
+  "ROADMAP.md",
   "NOTICE.md",
   "SECURITY.md",
   "docs/artifact-contracts.md",
