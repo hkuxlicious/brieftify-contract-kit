@@ -22,7 +22,8 @@ const boundaryReferenceFiles = new Set([
   "docs/artifact-contracts.md",
   "docs/mock-engine.md",
   "docs/public-boundaries.md",
-  "docs/release-checklist.md"
+  "docs/release-checklist.md",
+  "docs/release-checklist-review.md"
 ]);
 
 const forbiddenPathParts = [

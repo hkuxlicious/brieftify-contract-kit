@@ -8,7 +8,7 @@ Source of truth for "what's next" in this private repo.
 - [x] Add a private developer trial checklist.
 - [x] Add public validation examples using only synthetic inputs.
 - [x] Improve boundary checker tests.
-- [ ] Prepare release checklist review.
+- [x] Prepare release checklist review.
 - [ ] Create private GitHub issues later, after the near-term shape stabilizes.
 
 ## Working Rule
