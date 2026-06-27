@@ -1,8 +1,8 @@
 import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
+import { fileURLToPath } from "node:url";
 
-const root = process.cwd();
 const skipDirs = new Set([".git", "node_modules", "dist", "build", ".next"]);
 const scannedExtensions = new Set([".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs", ".json", ".md", ".txt"]);
 const guardFiles = new Set([
@@ -68,9 +68,13 @@ const privateCategoryPatterns = [
   { label: "deployment config", pattern: /\b(Vercel|Supabase)\b/ }
 ];
 
-const issues = [];
+export async function findPublicBoundaryIssues(root = process.cwd()) {
+  const issues = [];
+  await walk(root, root, issues);
+  return issues;
+}
 
-async function walk(dir) {
+async function walk(root, dir, issues) {
   for (const entry of await readdir(dir, { withFileTypes: true })) {
     if (skipDirs.has(entry.name)) continue;
     const fullPath = path.join(dir, entry.name);
@@ -82,7 +86,7 @@ async function walk(dir) {
     }
 
     if (entry.isDirectory()) {
-      await walk(fullPath);
+      await walk(root, fullPath, issues);
       continue;
     }
 
@@ -102,12 +106,18 @@ async function walk(dir) {
   }
 }
 
-await walk(root);
+if (isDirectRun()) {
+  const issues = await findPublicBoundaryIssues();
 
-if (issues.length) {
-  console.error("Public boundary check failed:");
-  for (const issue of issues) console.error(`- ${issue}`);
-  process.exit(1);
+  if (issues.length) {
+    console.error("Public boundary check failed:");
+    for (const issue of issues) console.error(`- ${issue}`);
+    process.exit(1);
+  }
+
+  console.log("Public boundary check passed.");
 }
 
-console.log("Public boundary check passed.");
+function isDirectRun() {
+  return process.argv[1] ? path.resolve(process.argv[1]) === fileURLToPath(import.meta.url) : false;
+}
