@@ -13,6 +13,8 @@ Source of truth for "what's next" in this private repo.
 
 ## Private GitHub Issues
 
+- Next: [#4 Run AI-simulated dogfood with Claude](https://github.com/hkuxlicious/brieftify-contract-kit/issues/4)
+- [#4 Run AI-simulated dogfood with Claude](https://github.com/hkuxlicious/brieftify-contract-kit/issues/4)
 - [#1 Run private developer validation trial](https://github.com/hkuxlicious/brieftify-contract-kit/issues/1)
 - [#2 Add focused schema and formatter tests](https://github.com/hkuxlicious/brieftify-contract-kit/issues/2)
 - [#3 Prepare public release decision review](https://github.com/hkuxlicious/brieftify-contract-kit/issues/3)
