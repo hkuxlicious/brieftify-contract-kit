@@ -4,8 +4,8 @@ Source of truth for "what's next" in this private repo.
 
 ## Priority Checklist
 
-- [ ] Commit and push current docs.
-- [ ] Add a private developer trial checklist.
+- [x] Commit and push current docs.
+- [x] Add a private developer trial checklist.
 - [ ] Add public validation examples using only synthetic inputs.
 - [ ] Improve boundary checker tests.
 - [ ] Prepare release checklist review.
