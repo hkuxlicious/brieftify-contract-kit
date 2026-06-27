@@ -9,7 +9,13 @@ Source of truth for "what's next" in this private repo.
 - [x] Add public validation examples using only synthetic inputs.
 - [x] Improve boundary checker tests.
 - [x] Prepare release checklist review.
-- [ ] Create private GitHub issues later, after the near-term shape stabilizes.
+- [x] Create private GitHub issues later, after the near-term shape stabilizes.
+
+## Private GitHub Issues
+
+- [#1 Run private developer validation trial](https://github.com/hkuxlicious/brieftify-contract-kit/issues/1)
+- [#2 Add focused schema and formatter tests](https://github.com/hkuxlicious/brieftify-contract-kit/issues/2)
+- [#3 Prepare public release decision review](https://github.com/hkuxlicious/brieftify-contract-kit/issues/3)
 
 ## Working Rule
 
