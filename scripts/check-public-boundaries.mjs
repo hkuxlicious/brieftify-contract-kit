@@ -24,6 +24,7 @@ const boundaryReferenceFiles = new Set([
   "SECURITY.md",
   "docs/artifact-contracts.md",
   "docs/mock-engine.md",
+  "docs/README.md",
   "docs/open-source-preview-plan.md",
   "docs/public-boundaries.md",
   "docs/release-checklist.md",

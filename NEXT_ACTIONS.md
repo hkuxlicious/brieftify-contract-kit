@@ -13,7 +13,7 @@ Source of truth for "what's next" in this private repo.
 
 ## Private GitHub Issues
 
-- Next: blocked on founder release approval or an outside developer for validation.
+- Next: monitor public-preview feedback; do not publish to npm.
 - [#5 Clarify builder report protocol from dogfood findings](https://github.com/hkuxlicious/brieftify-contract-kit/issues/5) - closed
 - [#4 Run AI-simulated dogfood with Claude](https://github.com/hkuxlicious/brieftify-contract-kit/issues/4) - closed
 - [#1 Run private developer validation trial](https://github.com/hkuxlicious/brieftify-contract-kit/issues/1) - deferred until an outside developer is available
@@ -23,9 +23,8 @@ Source of truth for "what's next" in this private repo.
 
 ## Current Blockers
 
-- Founder must approve the public/private boundary before public release.
-- Final release checklist must pass on the exact release commit.
 - Real developer validation remains deferred until an outside developer is available.
+- Package publishing remains intentionally out of scope.
 
 ## Working Rule
 
