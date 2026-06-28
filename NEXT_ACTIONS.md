@@ -13,12 +13,13 @@ Source of truth for "what's next" in this private repo.
 
 ## Private GitHub Issues
 
-- Next: [#3 Prepare public release decision review](https://github.com/hkuxlicious/brieftify-contract-kit/issues/3)
+- Next: [#6 Add public preview issue templates](https://github.com/hkuxlicious/brieftify-contract-kit/issues/6)
 - [#5 Clarify builder report protocol from dogfood findings](https://github.com/hkuxlicious/brieftify-contract-kit/issues/5) - closed
 - [#4 Run AI-simulated dogfood with Claude](https://github.com/hkuxlicious/brieftify-contract-kit/issues/4) - closed
 - [#1 Run private developer validation trial](https://github.com/hkuxlicious/brieftify-contract-kit/issues/1) - deferred until an outside developer is available
 - [#2 Add focused schema and formatter tests](https://github.com/hkuxlicious/brieftify-contract-kit/issues/2) - closed
-- [#3 Prepare public release decision review](https://github.com/hkuxlicious/brieftify-contract-kit/issues/3)
+- [#3 Prepare public release decision review](https://github.com/hkuxlicious/brieftify-contract-kit/issues/3) - closed
+- [#6 Add public preview issue templates](https://github.com/hkuxlicious/brieftify-contract-kit/issues/6)
 
 ## Working Rule
 

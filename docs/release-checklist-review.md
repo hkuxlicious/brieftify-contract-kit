@@ -1,6 +1,7 @@
 # Release Checklist Review
 
 Prepared: 2026-06-28
+Updated: 2026-06-29
 
 This is a readiness review, not approval to make the repo public.
 
@@ -11,6 +12,10 @@ This is a readiness review, not approval to make the repo public.
 - `npm run verify` passes locally.
 - Package metadata uses MIT while all package manifests remain `"private": true`.
 - `NOTICE.md` protects the Brieftify name, logo, hosted app, production prompts, private judgment engine, and commercial assets.
+- AI-simulated dogfood is complete across three synthetic examples.
+- Builder report protocol clarity has been improved from dogfood findings.
+- Focused schema, formatter, and boundary tests are in place.
+- Real outside-developer validation is deferred until an outside developer is available.
 
 ## Checklist Review
 
@@ -19,18 +24,22 @@ This is a readiness review, not approval to make the repo public.
 - Public check: automated by `npm run check:public` and included in `npm run verify`.
 - Deployment/product infrastructure: none intended in this repo.
 - Private engine material: keep excluding production prompts, classifier logic, semantic-contract logic, repair templates, scorecards, private prompts, and private regression cases.
-- User/customer material: use only synthetic examples.
+- User/customer material: current examples are synthetic.
 - README positioning: says this is a contract kit, not the Brieftify engine.
 - License/notice: MIT direction is set; NOTICE still reserves protected Brieftify assets.
+- Package publishing: not recommended yet; use repo-only public preview if release is approved.
 
 ## Remaining Before Public
 
 - Founder explicitly approves the public/private boundary.
 - Run one final `npm run verify` on the exact release commit.
 - Review all examples for synthetic-only content.
-- Decide whether this stays repo-only or gets package publishing preparation.
+- Keep release repo-only; defer package publishing.
+- Add public-preview issue templates to reduce support burden.
 - Confirm `package.json` remains `"private": true` until the actual publish decision.
 
 ## Recommendation
 
-Keep private while running developer validation. Revisit public release only after feedback shows the kit is useful without adding private engine behavior.
+Do not publish to npm. If founder approves the boundary, the safest path is a repo-only public preview framed as an experimental Build Contract primitive.
+
+This should be treated as developer discovery, not proof of demand. Keep the repo private until the final release checklist passes.

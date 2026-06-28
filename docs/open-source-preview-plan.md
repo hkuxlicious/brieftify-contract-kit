@@ -72,4 +72,4 @@ Pause public work if:
 
 ## Recommended Next Step
 
-Complete issue #5: clarify the builder report protocol from dogfood findings.
+Complete public-preview support boundaries, then run the final release checklist review.
