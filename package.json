@@ -11,7 +11,8 @@
   "scripts": {
     "verify": "npm run build && npm test",
     "check:public": "node scripts/check-public-boundaries.mjs",
-    "test": "npm run test:boundary && npm run check:public",
+    "test": "npm run test:contracts && npm run test:boundary && npm run check:public",
+    "test:contracts": "node scripts/contracts.test.mjs",
     "test:boundary": "node scripts/check-public-boundaries.test.mjs",
     "build": "tsc -p tsconfig.json --noEmit"
   },
