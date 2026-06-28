@@ -1,6 +1,6 @@
 # Notice
 
-This private-first seed is prepared by Brieftify.
+This public-preview contract kit is prepared by Brieftify.
 
 The Brieftify name, logo, hosted app, product experience, production prompts, private judgment engine, private regression cases, and commercial assets remain proprietary unless a future public release says otherwise.
 

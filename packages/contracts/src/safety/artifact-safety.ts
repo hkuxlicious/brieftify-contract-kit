@@ -29,6 +29,13 @@ export function auditPublicArtifactSafety(value: unknown): PublicSafetyAudit {
     };
   }
 
+  if (typeof text !== "string") {
+    return {
+      issues: ["Artifact could not be serialized safely."],
+      ok: false
+    };
+  }
+
   const issues = [
     ...secretPatterns.flatMap((pattern) => (pattern.test(text) ? ["Possible secret-shaped value."] : [])),
     ...privateFieldPatterns.flatMap((pattern) => (pattern.test(text) ? [`Private field pattern: ${pattern.source}`] : []))

@@ -84,4 +84,8 @@ const circularAudit = auditPublicArtifactSafety(circularValue);
 assert.equal(circularAudit.ok, false);
 assert.deepEqual(circularAudit.issues, ["Artifact could not be serialized safely."]);
 
+const undefinedAudit = auditPublicArtifactSafety(undefined);
+assert.equal(undefinedAudit.ok, false);
+assert.deepEqual(undefinedAudit.issues, ["Artifact could not be serialized safely."]);
+
 console.log("Contract schema and formatter tests passed.");
