@@ -15,6 +15,7 @@ const boundaryReferenceFiles = new Set([
   ".github/ISSUE_TEMPLATE/boundary-safety.yml",
   ".github/ISSUE_TEMPLATE/bug-report.yml",
   ".github/ISSUE_TEMPLATE/docs-schema-question.yml",
+  ".github/PULL_REQUEST_TEMPLATE.md",
   "README.md",
   "CONTRIBUTING.md",
   "NEXT_ACTIONS.md",

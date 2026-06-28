@@ -3,6 +3,7 @@ import { formatBuildContractMarkdown } from "../packages/contracts/src/format-bu
 import { isBuildContractV1 } from "../packages/contracts/src/schemas/build-contract-v1.ts";
 import { isBuilderPassReportV1 } from "../packages/contracts/src/schemas/builder-report-v1.ts";
 import { isContractReviewResultV1 } from "../packages/contracts/src/schemas/review-result-v1.ts";
+import { auditPublicArtifactSafety } from "../packages/contracts/src/safety/artifact-safety.ts";
 
 const contract = {
   allowedAssumptions: ["Use placeholder data only."],
@@ -68,5 +69,19 @@ assert.match(markdown, /ask_human: a check cannot be evaluated from the output/)
 assert.match(markdown, /Failed checks: required checks that are missing, incorrect, incomplete, or not observable\./);
 assert.match(markdown, /Drift found: unrequested scope, invented evidence, product-shape movement, or behavior outside the contract\./);
 assert.match(markdown, /Smallest next repair: one narrow repair, not a backlog\./);
+
+const safeAudit = auditPublicArtifactSafety({ example: "synthetic public artifact" });
+assert.equal(safeAudit.ok, true);
+
+const secretName = "OPENAI" + "_API" + "_KEY";
+const unsafeAudit = auditPublicArtifactSafety({ env: secretName });
+assert.equal(unsafeAudit.ok, false);
+assert.deepEqual(unsafeAudit.issues, ["Possible secret-shaped value."]);
+
+const circularValue = {};
+circularValue.self = circularValue;
+const circularAudit = auditPublicArtifactSafety(circularValue);
+assert.equal(circularAudit.ok, false);
+assert.deepEqual(circularAudit.issues, ["Artifact could not be serialized safely."]);
 
 console.log("Contract schema and formatter tests passed.");

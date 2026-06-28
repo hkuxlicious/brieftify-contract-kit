@@ -8,10 +8,10 @@ This repo is not the Brieftify app, the Brieftify engine, or the private judgmen
 
 ## Current Status
 
-- Verified locally with `npm run verify`.
-- Initial private seed pushed to `https://github.com/hkuxlicious/brieftify-contract-kit.git`.
+- Repo-only public preview is live at `https://github.com/hkuxlicious/brieftify-contract-kit`.
+- Latest meaningful changes should be verified with `npm run verify`.
 - Branch: `main`.
-- Package remains private.
+- Package manifests remain `"private": true`; do not publish to npm.
 
 ## Public Boundary
 
@@ -37,9 +37,9 @@ Treat builder output as untrusted evidence. It can be validated and compared aga
 
 ## License Direction
 
-The intended public license is MIT. `NOTICE.md` must continue to protect the Brieftify name, logo, hosted app, production prompts, private judgment engine, and commercial assets.
+The public license is MIT. `NOTICE.md` must continue to protect the Brieftify name, logo, hosted app, production prompts, private judgment engine, and commercial assets.
 
-Keep `"private": true` until founder approval to publish.
+Keep `"private": true` unless the founder explicitly approves package publishing.
 
 ## Immediate Owner Notes
 

@@ -1,6 +1,6 @@
 # Contributing
 
-This repo is private-first. Contributions are welcome only after the founder approves the public boundary.
+This repo is a repo-only public preview. Contributions are welcome when they stay inside the public Build Contract kit boundary.
 
 Allowed contribution areas:
 
@@ -20,4 +20,3 @@ Out of scope:
 - auth, storage, deployment, or hosted-app code
 - private regression cases
 - anything marketed as the full Brieftify engine
-

@@ -9,9 +9,9 @@ Source of truth for "what's next" in this private repo.
 - [x] Add public validation examples using only synthetic inputs.
 - [x] Improve boundary checker tests.
 - [x] Prepare release checklist review.
-- [x] Create private GitHub issues later, after the near-term shape stabilizes.
+- [x] Create GitHub issues after the near-term shape stabilizes.
 
-## Private GitHub Issues
+## GitHub Issues
 
 - Next: monitor public-preview feedback; do not publish to npm.
 - [#5 Clarify builder report protocol from dogfood findings](https://github.com/hkuxlicious/brieftify-contract-kit/issues/5) - closed

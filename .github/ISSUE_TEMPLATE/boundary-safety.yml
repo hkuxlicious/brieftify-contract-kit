@@ -9,13 +9,15 @@ body:
       value: |
         Use this for possible leaks or support-boundary risks.
 
-        Do not paste secrets, live credentials, customer data, production prompts, private regression cases, or proprietary artifacts. Describe the concern without reproducing sensitive material when possible.
+        If the report contains a real secret, credential, private prompt, customer data, production output, or proprietary artifact, do not open a public issue. Use GitHub private vulnerability reporting instead.
+
+        For public issues, describe the concern without reproducing sensitive material.
   - type: dropdown
     id: concern
     attributes:
       label: Concern type
       options:
-        - Possible secret or token
+        - Possible placeholder or token-like pattern, no raw secret included
         - Possible private product logic
         - Possible private prompt or regression case
         - Possible support-scope creep

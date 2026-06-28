@@ -2,14 +2,14 @@
 
 Use `NEXT_ACTIONS.md` as the short-term source of truth for "what's next."
 
-## Before Public Release
+## Public Preview Status
 
-- Confirm founder approval on the public/private boundary.
+- Repo-only public preview is live.
+- Founder approval for the public/private boundary happened before the repo was made public on 2026-06-29.
 - Keep `npm run verify` green.
-- Review git history for accidental imports from the private Brieftify app.
-- Confirm examples are synthetic and not derived from private prompts, users, or regression cases.
-- Decide package publishing shape, or keep this as a repo-only validation kit.
-- Final-check `NOTICE.md` before any public visibility change.
+- Keep package publishing out of scope.
+- Keep examples synthetic and not derived from private prompts, users, or regression cases.
+- Review `NOTICE.md` before any release posture change.
 
 ## Private Developer Validation
 

@@ -10,7 +10,7 @@ This repo is a public-safe Build Contract kit. It is not the Brieftify app, the 
 - Do not import or copy production Brieftify code.
 - Do not add classifier logic, semantic-contract logic, repair templates, scorecards, private prompts, or private regression cases.
 - Do not add auth, storage, Vercel/Supabase config, deployment setup, rate limits, or hosted-product infrastructure.
-- Keep this repo private until the release checklist passes and the founder approves release.
+- Do not expand the public boundary or publish packages without founder approval.
 - Treat builder output as untrusted evidence. Validate it before reviewing or formatting it.
 - Run `npm run verify` before finalizing meaningful changes.
 

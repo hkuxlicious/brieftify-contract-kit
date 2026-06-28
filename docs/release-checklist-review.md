@@ -3,11 +3,11 @@
 Prepared: 2026-06-28
 Updated: 2026-06-29
 
-This is a readiness review, not approval to make the repo public.
+This is a historical pre-release review plus the current public-preview status.
 
 ## Current Position
 
-- Repo is private and pushed to `https://github.com/hkuxlicious/brieftify-contract-kit.git`.
+- Repo-only public preview is live at `https://github.com/hkuxlicious/brieftify-contract-kit`.
 - `main` has only seed commits for this kit.
 - `npm run verify` passes locally.
 - Package metadata uses MIT while all package manifests remain `"private": true`.
@@ -17,9 +17,9 @@ This is a readiness review, not approval to make the repo public.
 - Focused schema, formatter, and boundary tests are in place.
 - Real outside-developer validation is deferred until an outside developer is available.
 
-## Checklist Review
+## Historical Pre-Release Review
 
-- Founder boundary approval: still required before public release.
+- Founder boundary approval: completed on 2026-06-29 before public preview.
 - Git history imported from private app: no evidence in current repo history.
 - Public check: automated by `npm run check:public` and included in `npm run verify`.
 - Deployment/product infrastructure: none intended in this repo.
@@ -29,17 +29,15 @@ This is a readiness review, not approval to make the repo public.
 - License/notice: MIT direction is set; NOTICE still reserves protected Brieftify assets.
 - Package publishing: not recommended yet; use repo-only public preview if release is approved.
 
-## Remaining Before Public
+## Current Guardrails
 
-- Founder explicitly approves the public/private boundary.
-- Run one final `npm run verify` on the exact release commit.
-- Review all examples for synthetic-only content.
 - Keep release repo-only; defer package publishing.
-- Add public-preview issue templates to reduce support burden.
-- Confirm `package.json` remains `"private": true` until the actual publish decision.
+- Keep `package.json` files `"private": true`.
+- Run `npm run verify` before meaningful changes.
+- Do not expand the public/private boundary without founder approval.
 
 ## Recommendation
 
-Do not publish to npm. If founder approves the boundary, the safest path is a repo-only public preview framed as an experimental Build Contract primitive.
+Do not publish to npm. Keep this as a repo-only public preview framed as an experimental Build Contract primitive.
 
-This should be treated as developer discovery, not proof of demand. Keep the repo private until the final release checklist passes.
+This should be treated as developer discovery, not proof of demand.
