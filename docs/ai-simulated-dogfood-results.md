@@ -132,3 +132,64 @@ Claude produced valid `builder-pass-report/v1` JSON:
 - Clarify that `smallestNextRepair` should contain one narrow repair, not a multi-item task list.
 
 Do not change the public schema yet. Run the expense approval workflow first and then decide whether stable IDs belong in examples only or in the core contract shape.
+
+## Run 4: Expense Approval Workflow With Strict JSON Prompt
+
+Simulator: Claude
+
+Synthetic input: expense approval workflow from `docs/public-validation-examples.md`.
+
+Prompt: required exact JSON matching `builder-pass-report/v1`.
+
+### Result
+
+Claude produced valid `builder-pass-report/v1` JSON:
+
+- `version`: `builder-pass-report/v1`
+- `status`: `continue`
+- `passedChecks`: populated
+- `failedChecks`: populated
+- `driftFound`: populated
+- `smallestNextRepair`: populated
+
+### Reported Drift
+
+- Rejection reason was optional instead of required when rejecting.
+- Audit log was absent.
+- Added spend analytics.
+- Added reimbursement processing, crossing into payment scope.
+
+### Useful Findings
+
+- The strict report shape worked across all three synthetic surfaces.
+- Negative constraints were especially valuable because they made scope creep visible.
+- `smallestNextRepair` remained useful for avoiding a large backlog.
+- `status` still needs a decision rule.
+- Bundled checks, such as "finance export and audit log", can produce partial pass/fail ambiguity.
+- `failedChecks` versus `driftFound` still needs a plain distinction.
+- A builder report can claim a pass without reviewer verification.
+
+### Candidate Improvements
+
+- Add a status decision rule: `done` when `failedChecks` and `driftFound` are empty, `continue` when repair is clear, and `ask_human` when a check cannot be evaluated from the output or needs a human decision.
+- Clarify that `failedChecks` are missing or incorrect required contract checks, while `driftFound` is unrequested scope, invented evidence, or product-shape movement.
+- Clarify that builder reports are claims until a reviewer verifies them.
+- Consider splitting bundled validation bullets into one check per observable requirement.
+
+## Cross-Run Summary
+
+The AI-simulated dogfood found useful friction without exposing private material.
+
+Repeated findings:
+
+- The strict JSON prompt is necessary.
+- `smallestNextRepair` is consistently valuable.
+- `status` needs a public decision rule.
+- `failedChecks` and `driftFound` need a simple distinction.
+- Examples should avoid bundled checks.
+- Stable check IDs may help examples and reports become comparable, but this should be introduced carefully and preferably first in examples.
+- The kit should keep saying that builder reports are untrusted claims until reviewed.
+
+Recommendation:
+
+Make one small public-safe docs/protocol clarification pass before adding more examples or asking outside developers for time.
