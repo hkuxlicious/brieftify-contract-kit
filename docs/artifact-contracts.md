@@ -27,6 +27,23 @@ After each AI-builder pass, ask the builder to report:
 - Drift found
 - Smallest next repair
 
+Treat this report as untrusted evidence. It is a claim about the output, not proof that the output is correct.
+
+Status decision rule:
+
+- `done`: `failedChecks` and `driftFound` are both empty.
+- `continue`: at least one failed check or drift item exists, and the smallest next repair is clear.
+- `ask_human`: a check cannot be evaluated from the output, or a product, policy, brand, compliance, pricing, or scope decision needs a human.
+
+List meanings:
+
+- `passedChecks`: builder-claimed checks that appear satisfied. A reviewer should still verify them.
+- `failedChecks`: required contract checks that are missing, incorrect, incomplete, or not observable.
+- `driftFound`: unrequested scope, invented evidence, product-shape movement, or behavior outside the contract.
+- `smallestNextRepair`: one narrow repair, not a backlog.
+
+For examples, prefer one observable check per line. Stable check IDs may be added to examples later, but they are not required by the v1 report shape.
+
 ## Review Result
 
 A future reviewer can return:
@@ -36,4 +53,3 @@ A future reviewer can return:
 - `needs_human`
 
 The public shape can be shared. The private Brieftify reviewer logic should stay private.
-
