@@ -87,3 +87,48 @@ Claude produced valid `builder-pass-report/v1` JSON:
 - Keep confidence fields out of the public report shape.
 
 Do not implement stable IDs until the remaining synthetic examples have been run. The same friction should appear more than once before changing the public contract shape.
+
+## Run 3: Layer Rename Plugin With Strict JSON Prompt
+
+Simulator: Claude
+
+Synthetic input: layer rename plugin from `docs/public-validation-examples.md`.
+
+Prompt: required exact JSON matching `builder-pass-report/v1`.
+
+### Result
+
+Claude produced valid `builder-pass-report/v1` JSON:
+
+- `version`: `builder-pass-report/v1`
+- `status`: `continue`
+- `passedChecks`: populated
+- `failedChecks`: populated
+- `driftFound`: populated
+- `smallestNextRepair`: populated
+
+### Reported Drift
+
+- Missing empty-selection state.
+- Missing preview state.
+- Missing undo state.
+- Added unrelated design-system rule-library and team-rule editor scope.
+
+### Useful Findings
+
+- The strict report shape worked again.
+- The validation-focus bullets were enough for Claude to identify missing states and scope creep.
+- `smallestNextRepair` again helped constrain the next action to one atomic repair.
+- `Useful result` reads more like a purpose statement than a checkable input.
+- The boundary between `continue` and `ask_human` remains undefined.
+- The boundary between `failedChecks` and `driftFound` remains fuzzy.
+- The stable check ID suggestion repeated across a second surface.
+
+### Candidate Improvements
+
+- Consider making validation-focus items explicit required checks instead of prose bullets.
+- Consider stable check IDs for examples and reports.
+- Clarify that all listed states are required when a validation line names specific states.
+- Clarify that `smallestNextRepair` should contain one narrow repair, not a multi-item task list.
+
+Do not change the public schema yet. Run the expense approval workflow first and then decide whether stable IDs belong in examples only or in the core contract shape.
