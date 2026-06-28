@@ -4,7 +4,7 @@ import process from "node:process";
 import { fileURLToPath } from "node:url";
 
 const skipDirs = new Set([".git", "node_modules", "dist", "build", ".next"]);
-const scannedExtensions = new Set([".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs", ".json", ".md", ".txt"]);
+const scannedExtensions = new Set([".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs", ".json", ".md", ".txt", ".yml", ".yaml"]);
 const guardFiles = new Set([
   "scripts/check-public-boundaries.mjs",
   "packages/contracts/src/safety/artifact-safety.ts"
@@ -12,6 +12,9 @@ const guardFiles = new Set([
 
 const boundaryReferenceFiles = new Set([
   "AGENTS.md",
+  ".github/ISSUE_TEMPLATE/boundary-safety.yml",
+  ".github/ISSUE_TEMPLATE/bug-report.yml",
+  ".github/ISSUE_TEMPLATE/docs-schema-question.yml",
   "README.md",
   "CONTRIBUTING.md",
   "NEXT_ACTIONS.md",

@@ -1,0 +1,47 @@
+name: Bug report
+description: Report a problem with schemas, formatter output, toy examples, or public-boundary checks.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This repo is a public-safe Build Contract kit, not the Brieftify engine.
+
+        Please do not include secrets, customer data, private prompts, production outputs, proprietary app details, or live product infrastructure.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Build Contract schema
+        - Builder pass report protocol
+        - Review result shape
+        - Markdown formatter
+        - Toy example
+        - Public-boundary check
+        - Docs
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the public-safe behavior you expected and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Minimal reproduction
+      description: Use synthetic data only.
+    validations:
+      required: false
+  - type: checkboxes
+    id: boundary
+    attributes:
+      label: Boundary check
+      options:
+        - label: I did not include private Brieftify logic, secrets, private prompts, customer data, production outputs, or proprietary details.
+          required: true

@@ -1,0 +1,40 @@
+name: Docs or schema question
+description: Ask about public schemas, docs, formatter behavior, or toy examples.
+title: "[Question]: "
+labels:
+  - question
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This repo supports the public Build Contract artifact shape only.
+
+        Questions about the hosted Brieftify app, production prompts, private judgment logic, classifier logic, semantic-contract logic, repair templates, auth, storage, or deployment setup are out of scope.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Build Contract schema
+        - Builder pass report protocol
+        - Review result shape
+        - Markdown formatter
+        - Toy example
+        - Public-boundary check
+        - Release docs
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: Keep it scoped to public-safe artifacts, docs, or toy examples.
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundary
+    attributes:
+      label: Boundary check
+      options:
+        - label: This question is about the public kit, not private Brieftify engine behavior.
+          required: true

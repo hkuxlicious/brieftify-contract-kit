@@ -1,0 +1,38 @@
+name: Boundary or safety concern
+description: Report a possible public/private boundary leak or support-scope risk.
+title: "[Boundary]: "
+labels:
+  - boundary
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for possible leaks or support-boundary risks.
+
+        Do not paste secrets, live credentials, customer data, production prompts, private regression cases, or proprietary artifacts. Describe the concern without reproducing sensitive material when possible.
+  - type: dropdown
+    id: concern
+    attributes:
+      label: Concern type
+      options:
+        - Possible secret or token
+        - Possible private product logic
+        - Possible private prompt or regression case
+        - Possible support-scope creep
+        - Other public/private boundary concern
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Give the file/path and a brief public-safe description.
+    validations:
+      required: true
+  - type: checkboxes
+    id: handling
+    attributes:
+      label: Handling
+      options:
+        - label: I avoided posting raw sensitive material.
+          required: true
